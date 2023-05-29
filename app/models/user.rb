@@ -5,4 +5,6 @@ class User < ApplicationRecord
   has_many :reservations, foreign_key: :renter_id
   has_many :planets_reviews, foreign_key: :renter_id
   has_many :planets, foreign_key: :owner_id
+
+  validates :first_name, :last_name, presence: true
 end
