@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :reservations, foreign_key: :renter_id, dependent: :destroy
   has_many :planets_reviews, foreign_key: :renter_id, dependent: :destroy
   has_many :planets, foreign_key: :owner_id, dependent: :destroy
+  has_one_attached :photo
 
   validates :first_name, :last_name, presence: true
 end
