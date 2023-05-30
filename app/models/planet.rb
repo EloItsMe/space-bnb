@@ -1,5 +1,5 @@
 class Planet < ApplicationRecord
-  belongs_to :user
+  belongs_to :owner, class_name: "User"
   has_many :reservations, dependent: :destroy
   has_many :planets_reviews, dependent: :destroy
   has_one_attached :photo
