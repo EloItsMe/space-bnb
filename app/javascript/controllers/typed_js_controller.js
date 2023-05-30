@@ -20,5 +20,7 @@ export default class extends Controller {
       loop: false,
       showCursor: false
     })
+
+    document.querySelector(".nav-container").classList.add("navbar-home-animation")
   }
 }

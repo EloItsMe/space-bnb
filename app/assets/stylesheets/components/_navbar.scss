@@ -36,7 +36,8 @@
       display: flex;
       align-items: center;
       height: 35px;
-      width: 450px;
+      max-width: 450px;
+      width: 100%;
       border: solid 2px $main-text;
       border-radius: 20px;
 
@@ -72,5 +73,19 @@
     .links-container > *{
       margin-inline: 5px;
     }
+  }
+}
+
+.navbar-home-animation{
+  transform: translateY(-52px);
+  opacity: 0;
+  animation: nav-aparition .5s ease-out forwards;
+  animation-delay: 3.3s;
+}
+
+@keyframes nav-aparition{
+  100%{
+    transform: none;
+    opacity: 1;
   }
 }

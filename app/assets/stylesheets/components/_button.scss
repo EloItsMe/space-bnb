@@ -46,8 +46,18 @@
   font-weight: 700;
   font-size: 20px;
   text-decoration: none;
+  transform: scale(0);
+  opacity: 0;
+  animation: cta-aparition .4s ease-out forwards;
+  animation-delay: 3s;
 
   &:hover{
     color: $main-text;
+  }
+}
+@keyframes cta-aparition {
+  100%{
+    transform: scale(1);
+    opacity: 1;
   }
 }
