@@ -1,0 +1,53 @@
+.btn-main{
+  display: flex;
+
+  background-color: $main;
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 5px;
+  color: $main-text;
+  border: solid 2px $main;
+  font-family: $font;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:hover{
+    color: $main-text;
+  }
+}
+.btn-second{
+  display: flex;
+
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 5px;
+  border: solid 2px $main-text;
+  color: $main-text;
+  font-family: $font;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:hover{
+    color: $main-text;
+  }
+}
+.cta{
+  display: flex;
+
+  background-color: $main;
+  padding-inline: 15px;
+  padding-block: 10px;
+  border-radius: 10px;
+  color: $main-text;
+  border: solid 2px $main;
+  font-family: $font;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+
+  &:hover{
+    color: $main-text;
+  }
+}

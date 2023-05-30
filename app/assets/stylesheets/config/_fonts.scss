@@ -9,3 +9,14 @@ a{
 li{
   list-style-type: none;
 }
+
+.hero-banner-title{
+  font-family: $font;
+  font-weight: 700;
+  font-size: 125px;
+}
+.hero-banner-subtitle{
+  font-family: $font;
+  font-weight: 700;
+  font-size: 35px;
+}

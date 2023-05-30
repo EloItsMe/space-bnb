@@ -1,3 +1,9 @@
 <%= cl_video_tag("https://res.cloudinary.com/dr4d7enko/video/upload/v1685446790/space-bnb/hero-banner-video/space-bnb-hero-banner_osexwr.mp4",
   loop: true, controls: false, autoplay: true, muted: true, preload: true, class: "video-banner")
 %>
+
+<div class="hero-banner-container">
+  <h1 class="hero-banner-title">SpaceBnB</h1>
+  <h2 class="hero-banner-subtitle">Explore the univers</h2>
+  <%= link_to "Find your galaxy", planets_path, class: "cta" %>
+</div>

@@ -1,0 +1,25 @@
+.video-banner{
+  position: absolute;
+  height: calc(100vh-52px);
+  width: 100vw;
+  left: 0;
+  object-fit: cover;
+  opacity: .7;
+  z-index: 0;
+}
+
+.hero-banner-container{
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+
+  .cta{
+    margin-top: 20px;
+  }
+}
