@@ -1,12 +1,12 @@
 <nav class="nav-container">
   <div class="nav">
     <%= link_to root_path, class: "logo-container" do %>
-      <%= cl_image_tag("https://res.cloudinary.com/dr4d7enko/image/upload/v1685449782/space-bnb/icons-picutre/planet_aqeam0.svg", class: "logo-svg") %>
+      <%= image_tag("https://res.cloudinary.com/dr4d7enko/image/upload/v1685449782/space-bnb/icons-picutre/planet_aqeam0.svg", class: "logo-svg") %>
       SpaceBnB
     <% end %>
 
     <form action="" class="search-bar">
-        <button type="submit" class="search-btn"><%= cl_image_tag("https://res.cloudinary.com/dr4d7enko/image/upload/v1685455086/space-bnb/icons-picutre/search_opt3qg.svg") %></button>
+        <button type="submit" class="search-btn"><%= image_tag("https://res.cloudinary.com/dr4d7enko/image/upload/v1685455086/space-bnb/icons-picutre/search_opt3qg.svg") %></button>
         <input type="text" placeholder="Search you univers..." name="search" class="search-input">
     </form>
 
