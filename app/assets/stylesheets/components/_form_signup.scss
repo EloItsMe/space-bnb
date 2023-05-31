@@ -1,4 +1,4 @@
-.card-login {
+.card-signup {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -28,7 +28,6 @@
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 4px;
-      margin-bottom: 10px;
       background: $background;
       color: $main-text;
 
@@ -43,16 +42,11 @@
       color: $main-text;
     }
 
-    input[type="checkbox"] {
-      background-color: $main-text;
-      border-color: $secondary-text;
-      box-shadow: none;
-    }
-
-    input[type="checkbox"]:checked {
-      background-color: #15191d;
-      border-color: $secondary-text;
-      box-shadow: none;
+    .name-inputs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
   }
 
@@ -64,7 +58,7 @@
   }
 }
 
-.links-form-login {
+.links-form-signup {
   display: flex;
   align-items: center;
   justify-content: center;

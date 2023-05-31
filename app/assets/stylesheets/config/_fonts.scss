@@ -3,6 +3,7 @@
 
 $font: 'Inter', sans-serif;
 $main: #8900FF;
+$main-text: #a845ff;
 
 a{
   text-decoration: none;
@@ -26,4 +27,9 @@ li{
   color: $main;
   text-decoration: none;
   opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+      color: $main-text;
+    }
 }
