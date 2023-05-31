@@ -14,16 +14,17 @@
     <div class="bottom-left">
 
       <div class="owner-info-container">
-        <%= link_to root_path, class: "owner-info" do %>
+        <div class="owner-info">
           <% if @planet.owner.photo.attached?  %>
             <%= cl_image_tag @planet.owner.photo.key, class: "avatar-large"%>
           <% else %>
             <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685479554/space-bnb/user-profile-picture/Windows-10-user-icon-big_atm8bb.png", class: "avatar-large", alt: "dropdown menu" %>
           <% end %>
           <p class="owner-name"><strong><%= @planet.owner.first_name %> <%= @planet.owner.last_name %></strong></p>
-        <% end %>
+        </div>
         <div class="rating">
-          <p><%= @planet.owner.rating %></p>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685558411/space-bnb/icons-picutre/star_1_qtposl.svg"%>
+            <p><%= @planet.owner.rating %></p>
         </div>
       </div>
     </div>
@@ -34,7 +35,10 @@
     <div class="top-right">
       <div class="title-container">
         <h1><%= @planet.name %></h1>
-        <p><%= @planet.rating %></p>
+        <div class="rating">
+          <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685558411/space-bnb/icons-picutre/star_1_qtposl.svg"%>
+          <p><%= @planet.rating %></p>
+        </div>
       </div>
 
       <div class="info-container">

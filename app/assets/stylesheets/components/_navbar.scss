@@ -82,20 +82,6 @@
   }
 }
 
-.navbar-home-animation{
-  transform: translateY(-52px);
-  opacity: 0;
-  animation: nav-aparition .5s ease-out forwards;
-  animation-delay: 3.3s;
-}
-
-@keyframes nav-aparition{
-  100%{
-    transform: none;
-    opacity: 1;
-  }
-}
-
 .navbar-menu{
   background-color: $secondary-background;
   border-radius: 5px;

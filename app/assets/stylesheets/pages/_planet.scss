@@ -4,14 +4,12 @@
   display: flex;
 
   background-color: $secondary-background;
-  box-shadow: 0px 0px 1000px 1px $main;
   border-radius:10px;
 
   padding: 15px;
   margin-top: 50px;
 
-  opacity: 0;
-  animation: aparition .8s forwards;
+  animation: breath-background 10s infinite;
 
   p{
     margin: 0;
@@ -25,7 +23,7 @@
     border-radius: 10px;
 
     opacity: 0;
-    animation: aparition .5s .2s forwards;
+    animation: aparition 1s .1s forwards;
 
     .info-container{
       display: flex;
@@ -67,20 +65,9 @@
 
         .avatar-large{
           border: solid 2px transparent;
-          transition: border-color .3s;
         }
         .owner-name strong{
-          color: $main;
-          border-bottom: solid 2px transparent;
-          transition: border-bottom .3s;
-        }
-        &:hover{
-          .avatar-large{
-            border-color: $main;
-          }
-          .owner-name strong{
-            border-bottom: solid 2px $main;
-          }
+          color: $main-text;
         }
       }
       .owner-info > *{
@@ -89,10 +76,25 @@
     }
   }
 
+  .rating{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    p{
+      color: $main-text;
+      font-size: 20px;
+    }
+    img{
+      height: 24px;
+      width: 24px;
+    }
+  }
+
   .right-container{
     margin-left: 10px;
     opacity: 0;
-    animation: aparition .5s .3s forwards;
+    animation: aparition 1s .2s forwards;
 
     .top-right{
       width: 100%;
@@ -109,9 +111,6 @@
           font-size: 50px;
           color: $main;
           font-weight: 700;
-        }
-        p{
-          display: none;
         }
       }
 
@@ -149,4 +148,9 @@
   100%{
     opacity: 1;
   }
+}
+@keyframes breath-background{
+  0%{ box-shadow: 0px 0px 1000px 1px rgba($color: $main, $alpha: .2); }
+  50%{ box-shadow: 0px 0px 1000px 1px $main; }
+  100%{ box-shadow: 0px 0px 1000px 1px rgba($color: $main, $alpha: .2); }
 }
