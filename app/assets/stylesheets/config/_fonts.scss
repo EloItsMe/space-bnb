@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 $font: 'Inter', sans-serif;
+$main: #8900FF;
 
 a{
   text-decoration: none;
@@ -19,4 +20,10 @@ li{
   font-family: $font;
   font-weight: 700;
   font-size: 35px;
+}
+
+.secondary-link {
+  color: $main;
+  text-decoration: none;
+  opacity: 0.8;
 }
