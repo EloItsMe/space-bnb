@@ -1,15 +1,9 @@
-<div class= "planets-page contaier">
-  <h2>Planet's Overview</h2>
-</div>
-
-<div class="container-planet ">
+<div class="container-planet">
   <% @planets.each do |planet|%>
-    <%= link_to planet_path(planet[:id]) do %>
-      <div class= "planets-category ">
-        <%= cl_image_tag planet.photo.key, width: "150"%>
-      </div>
-      <div class= "planets-title" >
-        <%= planet.name%>
+    <%= link_to planet_path(planet.id),  class: "planet-list" do %>
+      <%= cl_image_tag planet.photo.key, class: "planet-image-list"%>
+      <div class= "planets-content" >
+        <h1><%= planet.name%></h1>
       </div>
     <% end %>
   <% end %>
