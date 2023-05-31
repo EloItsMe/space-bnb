@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :planets, only: [:index, :show] do
+  resources :planets, only: %i[index show] do
     resources :reservations, only: [:create]
   end
 
-  resources :reservations, only: [:index]
+  resources :reservations, only: %i[index]
 
   namespace :owner do
-    resources :planets, only: [:index, :new, :create]
+    resources :planets, only: %i[index new create]
     resources :reservations, only: [:index] do
       member do
         patch :accept

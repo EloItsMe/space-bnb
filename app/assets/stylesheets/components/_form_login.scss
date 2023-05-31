@@ -1,0 +1,73 @@
+.card-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  padding: 50px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 1000px 1px $main;
+  background-color: #15191d;
+
+  h2 {
+    text-align: center;
+    color: $main-text;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-inputs {
+    margin-bottom: 20px;
+
+    input.form-control {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      background: $background;
+      color: $main-text;
+
+      &:focus {
+        border-color: $main;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    label {
+      color: $main-text;
+    }
+
+    input[type="checkbox"] {
+      background-color: $main-text;
+      border-color: $secondary-text;
+      box-shadow: none;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #15191d;
+      border-color: $secondary-text;
+      box-shadow: none;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.links-form-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  }
