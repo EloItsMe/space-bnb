@@ -1,6 +1,7 @@
 .planet-image-show{
-  height: 380px;
-  width: 380px;
+  height: 100%;
+  width: 460px;
+  object-fit: cover;
   border-radius: 5px;
 }
 .planet-image-list{

@@ -1,9 +1,6 @@
 .planet-container{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  max-width: 900px;
+  margin: auto;
   display: flex;
 
   background-color: $secondary-background;
@@ -11,6 +8,7 @@
   border-radius:10px;
 
   padding: 15px;
+  margin-top: 50px;
 
   opacity: 0;
   animation: aparition .8s forwards;
@@ -95,9 +93,9 @@
     margin-left: 10px;
     opacity: 0;
     animation: aparition .5s .3s forwards;
-    width: 380px;
 
     .top-right{
+      width: 100%;
       background-color: rgba($color: $background, $alpha: .5);
       border-radius: 10px;
       padding: 15px;
