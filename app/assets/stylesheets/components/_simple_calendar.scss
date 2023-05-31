@@ -1,0 +1,71 @@
+.simple-calendar {
+  table {
+    background-color: $secondary-background;
+    border-radius: 10px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .table > :not(caption) > * > * {
+    border: none;
+  }
+  .calendar-heading{
+    display: none;
+  }
+
+  .table-striped > tbody > tr:nth-of-type(odd) > * {
+    color: $main-text;
+  }
+  tr {
+
+  }
+
+  th {
+    padding: 6px;
+    // border: solid 2px $main-text;
+  }
+
+  td {
+    vertical-align: middle;
+    text-align: center;
+
+    // border: solid 1px $main-text;
+  }
+
+  .day {
+    height: 57px;
+    width: auto;
+  }
+
+  .wday-0 {
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background-color: $main;
+    border-radius: 100%;
+  }
+
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    display: none;
+    background: #DDD;
+  }
+  .next-month {
+    display: none;
+    background: #DDD;
+  }
+  .current-month {}
+
+  .has-events {}
+}
