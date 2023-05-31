@@ -2,25 +2,17 @@ import { Controller } from "@hotwired/stimulus"
 import Typed from "typed.js"
 
 export default class extends Controller {
-  static targets = [ "title", "subtitle" ]
+  static targets = ["subtitle" ]
 
   connect() {
-    new Typed(this.titleTarget, {
-      strings: ["SpaceBnB"],
-      typeSpeed: 70,
-      startDelay: 1000,
-      loop: false,
-      showCursor: false
-    })
-
     new Typed(this.subtitleTarget, {
-      strings: ["Explore the universe"],
-      typeSpeed: 30,
-      startDelay: 2000,
-      loop: false,
-      showCursor: false
+      strings: ["Explore the universe","Rented your dream planet"],
+      typeSpeed: 40,
+      backSpeed: 40,
+      backDelay: 2000,
+      startDelay: 400,
+      loop: true,
+      showCursor: true
     })
-
-    document.querySelector(".nav-container").classList.add("navbar-home-animation")
   }
 }

@@ -20,7 +20,6 @@ gem "simple_form", github: "heartcombo/simple_form"
 
 gem "devise"
 gem "cloudinary"
-gem "simple_calendar", "~> 2.4"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
