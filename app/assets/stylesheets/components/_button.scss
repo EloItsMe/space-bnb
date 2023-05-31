@@ -11,11 +11,15 @@
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
+  transition: box-shadow .3s;
 
   &:hover{
     color: $main-text;
+    box-shadow: rgba($color: $main, $alpha: .7) 0px 0px 5px 4px;
   }
 }
+
+
 .btn-second{
   display: flex;
 
@@ -28,26 +32,87 @@
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
+  transition: box-shadow .3s, text-shadow .3s;
 
   &:hover{
     color: $main-text;
+    box-shadow: rgba($color: $main-text, $alpha: .5) 0px 0px 5px 4px;
   }
 }
-.cta{
-  display: flex;
 
-  background-color: $main;
-  padding-inline: 15px;
-  padding-block: 10px;
-  border-radius: 10px;
-  color: $main-text;
-  border: solid 2px $main;
+
+.btn-decline{
+
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 5px;
+  border: solid 2px $decline;
+  color: $decline;
   font-family: $font;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 14px;
   text-decoration: none;
+  transition: box-shadow .3s, text-shadow .3s;
+
+  &:hover{
+    color: $decline;
+    box-shadow: rgba($color: $decline, $alpha: .5) 0px 0px 5px 2px;
+    text-shadow: rgba($color: $decline, $alpha: .5) 1px 0px 10px;
+  }
+}
+
+
+.cta-apparition{
+  transform: scale(0);
+  opacity: 0;
+  animation: cta-aparition .4s 3s ease-out forwards;
+
+  .cta{
+    display: flex;
+
+    background-color: $main;
+    padding-inline: 15px;
+    padding-block: 10px;
+    border-radius: 10px;
+    color: $main-text;
+    border: solid 2px $main;
+    font-family: $font;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    animation: breath 1.5s .5s infinite;
+    transition: transform .3s ease-out;
+
+    &:hover{
+      color: $main-text;
+      transform: scale(1.03);
+      animation: none;
+    }
+  }
+}
+@keyframes cta-aparition {
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes breath{
+  0%{box-shadow: rgba($color: $main, $alpha: 0) 0px 0px 5px 5px;}
+  50%{box-shadow: rgba($color: $main, $alpha: 0.7) 0px 0px 5px 5px;}
+  100%{box-shadow: rgba($color: $main, $alpha: .0) 0px 0px 5px 5px;}
+}
+
+.menu-link{
+  display: block;
+  color: $main-text;
+  font-family: $font;
+  font-weight: 400;
+  font-size: 15px;
+  text-decoration: none;
+  transition: box-shadow .3s, text-shadow .3s;
 
   &:hover{
     color: $main-text;
+    text-shadow: rgba($color: $main-text, $alpha: .5) 1px 0px 10px;
   }
 }

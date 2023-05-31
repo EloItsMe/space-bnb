@@ -25,10 +25,16 @@
       font-size: 20px;
       color: $main-text;
 
+      transition: text-shadow .3s;
+
       .logo-svg{
         height: 32px;
         width: 32px;
         margin-right: 10px;
+      }
+
+      &:hover{
+        text-shadow: rgba($color: $main-text, $alpha: .8) 0px 0px 10px;
       }
     }
 
@@ -36,7 +42,8 @@
       display: flex;
       align-items: center;
       height: 35px;
-      width: 450px;
+      max-width: 450px;
+      width: 100%;
       border: solid 2px $main-text;
       border-radius: 20px;
 
@@ -58,6 +65,7 @@
         border: none;
         outline: none;
         padding-block: 15px;
+
         &::placeholder{
           color: $secondary-text;
           font-size: 14px;
@@ -72,4 +80,33 @@
       margin-inline: 5px;
     }
   }
+}
+
+.navbar-home-animation{
+  transform: translateY(-52px);
+  opacity: 0;
+  animation: nav-aparition .5s ease-out forwards;
+  animation-delay: 3.3s;
+}
+
+@keyframes nav-aparition{
+  100%{
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.navbar-menu{
+  background-color: $secondary-background;
+  border-radius: 5px;
+  padding: 15px;
+  .separator{
+    width: 100%;
+    height: 2px;
+    background-color: $main-text;
+    margin-block: 15px;
+  }
+}
+.navbar-menu > *{
+  margin-block: 5px;
 }
