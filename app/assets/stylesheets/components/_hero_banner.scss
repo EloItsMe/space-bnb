@@ -1,6 +1,6 @@
 .video-banner{
   position: absolute;
-  height: calc(100vh-70px);
+  height: calc(100% - 70px);
   width: 100vw;
   left: 0;
   object-fit: cover;

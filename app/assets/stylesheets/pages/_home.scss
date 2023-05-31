@@ -1,17 +1,1 @@
 // Specific CSS for your home-page
-.nav-container{
-  transform: translateY(-52px);
-  animation: nav-aparition .5s forwards, none;
-  animation-delay: 3.3s;
-}
-.cta{
-  transform: scale(0);
-  animation: cta-aparition .4s forwards, none;
-  animation-delay: 3s;
-}
-@keyframes nav-aparition{
-  100%{ transform: translateY(0px); }
-}
-@keyframes cta-aparition {
-  100%{ transform: scale(1);}
-}

@@ -1,84 +1,56 @@
-<<<<<<< HEAD
-<h1>Planet's Overview</h1>
+<div class="planet-container">
+  <div class="left-container">
+    <div class="top-left">
+      <%= cl_image_tag @planet.photo.key, class: "planet-image-show" %>
+      <div class="info-container">
+        <div class="price">
+          <p><strong><%= @planet.price_per_day %></strong></p>
+          <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685525826/space-bnb/icons-picutre/btc-per-day_x638y7.svg" %>
+        </div>
+      <p><strong><%= @planet.size %></strong> km</p>
+      </div>
+    </div>
 
-<div>
-<div class="planets-cards">
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    ORBEATLES
+    <div class="bottom-left">
+
+      <div class="owner-info-container">
+        <%= link_to root_path, class: "owner-info" do %>
+          <% if @planet.owner.photo.attached?  %>
+            <%= cl_image_tag @planet.owner.photo.key, class: "avatar-large"%>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685479554/space-bnb/user-profile-picture/Windows-10-user-icon-big_atm8bb.png", class: "avatar-large", alt: "dropdown menu" %>
+          <% end %>
+          <p class="owner-name"><strong><%= @planet.owner.first_name %> <%= @planet.owner.last_name %></strong></p>
+        <% end %>
+        <div class="rating">
+          <p><%= @planet.owner.rating %></p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    MADONERRE
+  <div class="right-container">
+    <div class="top-right">
+      <div class="title-container">
+        <h1><%= @planet.name %></h1>
+        <p><%= @planet.rating %></p>
+      </div>
+
+      <div class="info-container">
+        <h2><%= @planet.galaxy %></h2>
+        <h3>( <%= @planet.kind %> )</h3>
+      </div>
+      <p><%= @planet.content %></p>
+    </div>
+
+    <div class="bottom-right">
+      <div class="reservation-container">
+        <%= month_calendar do |date| %>
+          <%= date.day %>
+        <% end %>
+        <%= link_to "Booking", root_path, class: "btn-main" %>
+      </div>
+    </div>
   </div>
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    GRAVITELEGERE
-  </div>
-</div>
-
-  <div class="planets-cards">
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    ASTEROHIDALGO
-  </div>
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    METEOREO
-  </div>
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    MARSMALLOW
-  </div>
-  </div>
-
-  <div class="planets-cards">
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    COSMOPOLITAIN
-  </div>
-
-  <div class="planets-cards">
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    GALAXSEA
-  </div>
-=======
-<div class="container-planets">
-
-  <h1>Planet's Overview</h1>
-
-<div class="planets-cards">
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  </div>
-   <div class="text-planet"><h3>ORBEATLES</h3></div>
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-  </div>
-  <div class="text-planet"><h3>MADONNERRE</h3></div>
-
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-  </div>
-  <div class="text-planet"><h3>GRAVITELEGERE</h3></div>
-
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  </div>
-  <div class="text-planet"><h3>ASTEROHIDALGO</h3></div>
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-  </div>
-  <div class="text-planet"><h3>METEOREO</h3></div>
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-  </div>
-  <div class="text-planet"><h3>MARSMALLOW</h3></div>
-
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  </div>
-  <div class="text-planet"><h3>COSMOPOLITAIN</h3></div>
-
-
-  <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  </div>
-  <div class="text-planet"><h3>GALAXSEA</h3></div>
->>>>>>> master
 </div>
