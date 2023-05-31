@@ -1,38 +1,16 @@
-<div class="container-planet">
+<div class= "planets-page contaier">
+  <h2>Planet's Overview</h2>
+</div>
 
-  <h1>Planet's Overview</h1>
-
-  <div class="planets-cards">
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <div class ="text-planet"> <h3> ORBEATLES</h3></div>
-    </div>
-
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      <div class ="text-planet" > <h3>MADONNERRE</h3></div>
-    </div>
-
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      <div class ="text-planet"><h3>GRAVITELEGERE</h3></div>
-    </div>
-
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <div class ="text-planet"><h3>ASTEROHIDALGO</h3></div>
-    </div>
-
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      <div class ="text-planet"><h3>METEOREO</h3></div>
-    </div>
-
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      <div class ="text-planet"><h3>MARSMALLOW</h3></div>
-    </div>
-
-    <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <div class ="text-planet"><h3>COSMOPOLITAIN</h3></div>
-    </div>
-
-      <div class="planets-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <div class ="text-planet"><h3>GALAXSEA</h3></div>
-    </div>
-  </div>
+<div class="container-planet ">
+  <% @planets.each do |planet|%>
+    <%= link_to planet_path(planet[:id]) do %>
+      <div class= "planets-category ">
+        <%= cl_image_tag planet.photo.key, width: "150"%>
+      </div>
+      <div class= "planets-title" >
+        <%= planet.name%>
+      </div>
+    <% end %>
+  <% end %>
 </div>
