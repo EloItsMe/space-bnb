@@ -1,0 +1,141 @@
+wc-datepicker,
+wc-datepicker *,
+wc-datepicker *:before,
+wc-datepicker *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+wc-datepicker {
+  display: inline-flex;
+}
+
+.wc-datepicker {
+  display: block;
+  width: min-content;
+  min-width: 17rem;
+  max-width: 24rem;
+  color: $background;
+  background-color: $secondary-background;
+  font-family: $font;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 5px;
+}
+
+.wc-datepicker--disabled .wc-datepicker__weekday {
+  color: #767676;
+}
+
+.wc-datepicker--disabled .wc-datepicker__date:focus > * {
+  outline: none;
+}
+
+.wc-datepicker--disabled .wc-datepicker__date {
+  cursor: default;
+  opacity: 0.5;
+}
+
+
+.wc-datepicker__header {
+  display: flex;
+  padding: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wc-datepicker__current-month {
+  display: flex;
+  flex-grow: 1;
+  gap: 0.5rem;
+}
+
+.wc-datepicker__month-select,
+.wc-datepicker__year-select {
+  display: flex;
+  height: 2rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  color: $main-text;
+  background: rgba($color: $background, $alpha: .5);
+  font: inherit;
+  line-height: 1.125;
+}
+
+.wc-datepicker__month-select {
+  flex-grow: 1;
+  cursor: pointer;
+  appearance: none;
+}
+
+.wc-datepicker__year-select {
+  max-width: 5rem;
+}
+
+
+.wc-datepicker__body {
+  padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.wc-datepicker__calendar {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.wc-datepicker__weekday > span {
+  display: flex;
+  padding: 0.125rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  aspect-ratio: 1;
+}
+
+.wc-datepicker__date {
+  padding: 0.125rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.wc-datepicker__date:focus {
+  outline: none;
+}
+
+.wc-datepicker__date:focus > * {
+  outline: 0.125rem solid $main;
+}
+
+.wc-datepicker__date:hover > * {
+  background-color: rgba($color: $background, $alpha: .5);
+}
+
+.wc-datepicker__date > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  aspect-ratio: 1;
+}
+
+.wc-datepicker__date--today > * {
+  font-style: normal;
+}
+
+.wc-datepicker__date--in-range > * {
+  background-color: rgba($color: $background, $alpha: .5);
+}
+
+.wc-datepicker__date--selected > *,
+.wc-datepicker__date--selected:hover > * {
+  color: $main-text;
+  background-color: $main;
+  font-weight: 500;
+}

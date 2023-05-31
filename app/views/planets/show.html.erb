@@ -1,3 +1,8 @@
+<script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/wc-datepicker/dist/esm/wc-datepicker.js"
+  ></script>
+
 <div class="planet-container">
   <div class="left-container">
     <div class="top-left">
@@ -50,9 +55,7 @@
 
     <div class="bottom-right">
       <div class="reservation-container">
-        <%= month_calendar do |date| %>
-          <%= date.day %>
-        <% end %>
+        <wc-datepicker disabled="false" range show-year-stepper="false" show-month-stepper="false" show-clear-button="false" show-today-button="false" id="datepicker"></wc-datepicker>
         <%= link_to "Booking", root_path, class: "btn-main" %>
       </div>
     </div>

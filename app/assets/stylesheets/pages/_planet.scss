@@ -136,7 +136,11 @@
       padding: 15px;
       margin-top: 10px;
 
+      display: flex;
+      justify-content: center;
+
       .btn-main{
+        margin-top: 20px;
         padding-block: 10px;
       }
     }
