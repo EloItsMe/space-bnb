@@ -1,37 +1,25 @@
-.container-planet h1{
-  margin-left: 1cm;
-<<<<<<< HEAD
-  margin-bottom: 2cm;
-=======
-  margin-bottom: 3cm;
-  margin-top: 2cm;
->>>>>>> master
-}
-
-
-.planets-cards {
-<<<<<<< HEAD
-=======
-  border-radius: 5px;
->>>>>>> master
-  display: grid;
-  place-content: align-content;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 50px;
-  width: 100%;
-  height: 400px;
-  margin: auto;
+.container-planet {
+  //display: grid;
+  //grid-column: 1fr 1fr 1fr 1fr;
+  //grid-gap: 16px;
   max-width: 1280px;
-<<<<<<< HEAD
-  margin-top: 3cm;
-  border-radius: 75%;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  a {
+    text-decoration: none;
+  }
+}
+.planets-category{
+  height: 150px;
+  width:150px;
+
+
 }
 
-.text-planet {
-  justify-content: space-between;
-  position: fixed;
-  margin-bottom: 1rem;
-=======
-  margin-top: 10px;
->>>>>>> master
+.planets-title{
+  text-decoration: none;
+  justify-content: center;
+  color: #8900FF;;
+
 }
