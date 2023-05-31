@@ -1,12 +1,75 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+.nav-container{
+  position: sticky;
+  top: 0;
+  height: 70px;
+  width: 100vw;
+  background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(255,255,255,0) 100%);
+  z-index: 2;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding-inline: 10px;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+    .logo-container{
+      display: flex;
+      text-decoration: none;
+      align-items: center;
+
+      font-family: $font;
+      font-weight: 700;
+      font-size: 20px;
+      color: $main-text;
+
+      .logo-svg{
+        height: 32px;
+        width: 32px;
+        margin-right: 10px;
+      }
+    }
+
+    .search-bar{
+      display: flex;
+      align-items: center;
+      height: 35px;
+      width: 450px;
+      border: solid 2px $main-text;
+      border-radius: 20px;
+
+      .search-btn{
+        border: none;
+        background-color: transparent;
+        margin-inline: 10px;
+
+        img{
+          height: 18px;
+          width: 18px;
+        }
+      }
+
+      .search-input{
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding-block: 15px;
+        &::placeholder{
+          color: $secondary-text;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .links-container{
+      display: flex;
+    }
+    .links-container > *{
+      margin-inline: 5px;
+    }
+  }
 }

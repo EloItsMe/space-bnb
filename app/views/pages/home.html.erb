@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= video_tag("https://res.cloudinary.com/dr4d7enko/video/upload/v1685446790/space-bnb/hero-banner-video/space-bnb-hero-banner_osexwr.mp4",
+  loop: true, controls: false, autoplay: true, muted: true, preload: true, class: "video-banner")
+%>
+
+<div class="hero-banner-container" data-controller="typed-js">
+  <h1 class="hero-banner-title" data-typed-js-target="title"></h1>
+  <h2 class="hero-banner-subtitle" data-typed-js-target="subtitle"></h2>
+  <%= link_to "Find your galaxy", planets_path, class: "cta" %>
+</div>
