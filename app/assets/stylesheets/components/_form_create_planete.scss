@@ -11,7 +11,7 @@
   padding: 50px 20px;
   border-radius: 5px;
   color: $main-text;
-  box-shadow: 0 0 1000px 1px $main;
+  animation: breath-background 10s infinite;
   background-color: #15191d;
 
   h2 {
