@@ -53,12 +53,17 @@
       <p><%= @planet.content %></p>
     </div>
 
+
+
     <div class="bottom-right">
       <div class="reservation-container" data-controller="daterange">
         <%= simple_form_for [@planet, @reservation] do |f| %>
           <div class="d-none"><%= f.input :daterange, input_html: { data: { daterange_target: "dateinput" } } %></div>
           <wc-datepicker disabled="false" range show-year-stepper="false" show-month-stepper="false" show-clear-button="false" show-today-button="false" id="datepicker" data-daterange-target="date" data-action="click->daterange#datecalculator"></wc-datepicker>
-          <%= f.button :submit, "Booking", class: "btn-main" %>
+          <div class="submit-container">
+            <%= f.button :submit, "Booking", class: "btn-main" %>
+            <span data-daterange-target="totalprice" data-price="<%= @planet.price_per_day %>"></span>
+          </div>
         <% end %>
       </div>
     </div>
