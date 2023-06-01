@@ -1,14 +1,1 @@
-<div class="container-planet">
-  <% @planets.each do |planet|%>
-    <%= link_to planet_path(planet.id),  class: "planet-list" do %>
-      <%= cl_image_tag planet.photo.key, class: "planet-image-list"%>
-      <div class= "planets-content" >
-      <p><%= planet.size %></p>
-      <p><%= planet.price_per_day %></p>
-      <h1><%= planet.name.capitalize %></h1>
-      <h2><%= planet.galaxy.capitalize %></h2>
-        <h3> <%= planet.kind %> </h3>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+<%= render "shared/planets-cards" %>

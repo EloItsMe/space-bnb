@@ -1,0 +1,31 @@
+<div class="container-planet">
+  <% @planets.each do |planet|%>
+    <%= link_to planet_path(planet.id),  class: "planet-list" do %>
+      <%= cl_image_tag planet.photo.key, class: "planet-image-list"%>
+      <div class= "planets-content" >
+        <div class="card-title">
+          <h1 class="card-text-title"><%= planet.name.capitalize %></h1>
+          <div class="rating-card">
+            <p><%= planet.rating %></p>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685558411/space-bnb/icons-picutre/star_1_qtposl.svg" %>
+          </div>
+        </div>
+
+        <div class="planets-type">
+          <h2 class="card-galaxy"><%= planet.galaxy.capitalize %></h2>
+          <h3 class="card-kind"><%= planet.kind %></h3>
+        </div>
+        <div class="planets-info">
+          <div class="planets-price">
+            <p class="price-text"><%= planet.price_per_day %></p>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685525826/space-bnb/icons-picutre/btc-per-day_x638y7.svg"%>
+          </div>
+          <div class="planets-size">
+            <p class="size-text"><%= planet.size %> <span>km</span></p>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685624550/space-bnb/icons-picutre/diameter_naqwxi.svg"  %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
