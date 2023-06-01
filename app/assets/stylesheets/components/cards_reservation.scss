@@ -1,0 +1,151 @@
+.reservation-container{
+  padding-block: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  max-width: 1280px;
+  margin: auto;
+
+  .reservation-list{
+    position: relative;
+    background-color: $secondary-background;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    transition: box-shadow .3s, transform .3s;
+
+    &:hover{
+      box-shadow: 0px 0px 50px 1px $main;
+      transform: scale(1.02);
+    }
+    .reservations-content{
+      padding: 10px;
+    }
+    .reservations-content > *{
+      margin-top: 10px;
+    }
+
+    .reservation-card-title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .reservation-card-text-title{
+        font-size: 32px;
+        font-weight: 700;
+        color: $main;
+      }
+
+      .reservation-rating-card{
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        p{
+          margin: 0;
+        }
+
+        img{
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+
+    .reservation-planets-type{
+      display: flex;
+      justify-content: space-between;
+
+      .reservation-card-galaxy{
+        font-size: 24px;
+      }
+      .reservation-card-kind{
+        font-size: 20px;
+        color: $secondary-text;
+      }
+    }
+
+    .reservation-infos{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .reservation-planets-price{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .reservation-planets-price-text{
+          margin: 0;
+          color: $secondary-text;
+        }
+      }
+
+      .reservation-planets-size{
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        .reservation-planets-size-text{
+          margin: 0;
+          color: $secondary-text;
+            span {
+              color: $secondary-text;
+            }
+        }
+
+        img{
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+
+.reservation-status {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  transform: rotate(45deg);
+  background-color: #8900FF; /* Utilisation de votre couleur principale pour le fond */
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2); /* Ajout d'une ombre pour plus de profondeur */
+  border: 2px solid #ffffff; /* Ajout d'une bordure pour le contraste */
+    p {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $main-text;
+    }
+}
+
+.reservation-infos-renter {
+  display: grid;
+  grid-template-columns: 50px auto auto;
+  grid-column-gap: 10px;
+  align-items: stretch;
+  justify-items: start;
+
+  .reservation-renter-avatar {
+    grid-column: 1;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .reservation-renter {
+    grid-column: 2;
+    color: $secondary-text;
+  }
+  .reservation-dates {
+    grid-column: 3;
+    color: $secondary-text;
+    text-align: right;
+    justify-self: end;
+  }
+}
