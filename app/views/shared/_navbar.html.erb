@@ -23,8 +23,11 @@
         <% end %>
       </a>
         <div class="dropdown-menu dropdown-menu-end navbar-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "All my planets", owner_planets_path, class: "menu-link" %>
-          <%= link_to "All my reservations", owner_reservations_path, class: "menu-link" %>
+          <p class="menu-link"><%= current_user.first_name %> <%= current_user.last_name %></p>
+          <div class="separator"></div>
+          <%= link_to "My planets", owner_planets_path, class: "menu-link" %>
+          <%= link_to "My reservations", reservations_path, class: "menu-link" %>
+          <%= link_to "My pending reservations", owner_reservations_path, class: "menu-link" %>
           <div class="separator"></div>
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-decline" %>
         </div>

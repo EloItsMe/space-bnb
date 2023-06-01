@@ -116,3 +116,15 @@
     text-shadow: rgba($color: $main-text, $alpha: .5) 1px 0px 10px;
   }
 }
+
+.container-btn{
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  padding-top: 20px;
+
+  .btn-main{
+    padding: 10px;
+  }
+}

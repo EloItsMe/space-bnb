@@ -12,7 +12,10 @@
           <p><strong><%= @planet.price_per_day %></strong></p>
           <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685525826/space-bnb/icons-picutre/btc-per-day_x638y7.svg" %>
         </div>
-      <p><strong><%= @planet.size %></strong> km</p>
+        <div class="planet-size">
+            <p><strong><%= @planet.size %></strong>  km</p>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685624550/space-bnb/icons-picutre/diameter_naqwxi.svg"  %>
+          </div>
       </div>
     </div>
 
@@ -48,7 +51,7 @@
 
       <div class="info-container">
         <h2><%= @planet.galaxy %></h2>
-        <h3>( <%= @planet.kind %> )</h3>
+        <h3><%= @planet.kind %></h3>
       </div>
       <p><%= @planet.content %></p>
     </div>
@@ -60,10 +63,13 @@
         <%= simple_form_for [@planet, @reservation] do |f| %>
           <div class="d-none"><%= f.input :daterange, input_html: { data: { daterange_target: "dateinput" } } %></div>
           <wc-datepicker disabled="false" range show-year-stepper="false" show-month-stepper="false" show-clear-button="false" show-today-button="false" id="datepicker" data-daterange-target="date" data-action="click->daterange#datecalculator"></wc-datepicker>
-          <div class="submit-container">
-            <%= f.button :submit, "Booking", class: "btn-main" %>
-            <span data-daterange-target="totalprice" data-price="<%= @planet.price_per_day %>"></span>
-          </div>
+          <button type="submit" class="btn-main">
+            <span>Booking</span>
+            <div class="price-value">
+              <span data-daterange-target="totalprice" data-price="<%= @planet.price_per_day %>">0</span>
+              <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685628907/space-bnb/icons-picutre/bitcoin_s8x5wu.svg" %>
+            </div>
+          </button>
         <% end %>
       </div>
     </div>
