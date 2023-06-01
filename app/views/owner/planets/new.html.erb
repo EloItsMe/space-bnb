@@ -12,7 +12,7 @@
 
         <%= f.input :size, label: false, placeholder: "Size", class: "form-control" %>
         <%= f.input :price_per_day, label: false, placeholder: "Price per day", class: "form-control" %>
-        <%= f.input :kind, label: false, placeholder: "Kind", class: "form-control", :as => :select, :collection => %w[planet comet meteorite star] %>
+        <%= f.input :kind, label: false,prompt: "Type of planet", class: "form-control", :as => :select, :collection => %w[planet comet meteorite star] %>
         <%= f.input :content,
                     label: false,
                     placeholder: "Content",
@@ -20,10 +20,9 @@
                     class: "form-control" %>
         <%= f.input :photo, label: false, placeholder: "Photo", class: "form-control" %>
       </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Create a new planet", class: "btn-main" %>
-    </div>
+      <div class="btn-form-container">
+        <%= f.button :submit, "Create a new planet", class: "btn-main" %>
+        <%= link_to "Cancel ", owner_planets_path, class: "btn-decline" %>
+      </div>
     <% end %>
-    <%= link_to "Cancel ", owner_planets_path, class: "btn-decline" %>
   </div>
