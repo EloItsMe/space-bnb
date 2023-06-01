@@ -13,6 +13,10 @@ drink_jagger = User.create!(
   rating: rand(1.0..5).round(1)
 )
 
+file = File.open(Rails.root.join("db/avatars/drink_jagger.jpg"))
+drink_jagger.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+drink_jagger.save!
+
 pouris_hilton = User.create!(
   first_name: 'Pouris',
   last_name: 'Hilton',
@@ -20,6 +24,10 @@ pouris_hilton = User.create!(
   password: 'spacebnb',
   rating: rand(1.0..5).round(1)
 )
+
+file = File.open(Rails.root.join("db/avatars/pouris_hilton.jpg"))
+pouris_hilton.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+pouris_hilton.save!
 
 muncha_kunis = User.create!(
   first_name: 'Muncha',
@@ -29,6 +37,10 @@ muncha_kunis = User.create!(
   rating: rand(1.0..5).round(1)
 )
 
+file = File.open(Rails.root.join("db/avatars/muncha_kunis.jpg"))
+muncha_kunis.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+muncha_kunis.save!
+
 jeff_golum = User.create!(
   first_name: 'Jeff',
   last_name: 'Golum',
@@ -36,6 +48,10 @@ jeff_golum = User.create!(
   password: 'spacebnb',
   rating: rand(1.0..5).round(1)
 )
+
+file = File.open(Rails.root.join("db/avatars/jeff_golum.jpg"))
+jeff_golum.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+jeff_golum.save!
 
 scoop_dogg = User.create!(
   first_name: 'Scoop',
@@ -45,13 +61,21 @@ scoop_dogg = User.create!(
   rating: rand(1.0..5).round(1)
 )
 
+file = File.open(Rails.root.join("db/avatars/scoop_dogg.jpg"))
+scoop_dogg.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+scoop_dogg.save!
+
 leonardo_dicarpaccio = User.create!(
   first_name: 'Leonardo',
   last_name: 'DiCarpaccio',
-  email: 'leaonardo-dicarpaccio@space.com',
+  email: 'leonardo-dicarpaccio@space.com',
   password: 'spacebnb',
   rating: rand(1.0..5).round(1)
 )
+
+file = File.open(Rails.root.join("db/avatars/leonardo_dicarpaccio.jpg"))
+leonardo_dicarpaccio.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+leonardo_dicarpaccio.save!
 
 chef_bezos = User.create!(
   first_name: 'Chef',
@@ -61,6 +85,10 @@ chef_bezos = User.create!(
   rating: rand(1.0..5).round(1)
 )
 
+file = File.open(Rails.root.join("db/avatars/chef_bezos.jpg"))
+chef_bezos.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+chef_bezos.save!
+
 elon_trust = User.create!(
   first_name: 'Elon',
   last_name: 'Trust',
@@ -69,13 +97,21 @@ elon_trust = User.create!(
   rating: rand(1.0..5).round(1)
 )
 
+file = File.open(Rails.root.join("db/avatars/elon_trust.jpg"))
+elon_trust.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+elon_trust.save!
+
 john_mcdonald = User.create!(
-  first_name: 'Chef',
-  last_name: 'Buzolini',
-  email: 'chef-buzolini@space.com',
+  first_name: 'John',
+  last_name: 'McDonald',
+  email: 'john-mcdonaldd@space.com',
   password: 'spacebnb',
   rating: rand(1.0..5).round(1)
 )
+
+file = File.open(Rails.root.join("db/avatars/john_mcdonald.jpg"))
+john_mcdonald.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+john_mcdonald.save!
 
 leona_helmsworth = User.create!(
   first_name: 'Leona',
@@ -85,6 +121,10 @@ leona_helmsworth = User.create!(
   rating: rand(1.0..5).round(1)
 )
 
+file = File.open(Rails.root.join('db/avatars/leona_helmsworth.jpg'))
+leona_helmsworth.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+leona_helmsworth.save!
+
 seyfried_gonzalez = User.create!(
   first_name: 'Seyfried',
   last_name: 'Gonzalez',
@@ -93,6 +133,9 @@ seyfried_gonzalez = User.create!(
   rating: rand(1.0..5).round(1)
 )
 
+file = File.open(Rails.root.join('db/avatars/seyfried_gonzalez.jpg'))
+seyfried_gonzalez.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+seyfried_gonzalez.save!
 
 # => LES PLANÈTES :
 
