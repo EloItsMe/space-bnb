@@ -1,7 +1,7 @@
 module Owner
   class ReservationsController < ApplicationController
     def index
-      @planets = Planet.where(owner: current_user)
+      @reservations = Reservation.includes(:planet).where(planets: { owner: current_user }, status: 'pending')
     end
   end
 end

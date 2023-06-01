@@ -647,7 +647,7 @@ Reservation.create!(
   start_date: '2023-06-14',
   end_date: '2023-06-24',
   total_price: 2178,
-  status: 'Confirmed'
+  status: 'confirmed'
 )
 Reservation.create!(
   renter: chef_bezos,
