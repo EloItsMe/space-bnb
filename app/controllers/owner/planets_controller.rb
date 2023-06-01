@@ -1,11 +1,12 @@
-class Owner::PlanetsController < ApplicationController
-  def index
-    @planets = current_user.planets
-  end
+module Owner
+  class PlanetsController < ApplicationController
+    def index
+      @planets = current_user.planets
+    end
 
-  def new
-    @planet = Planet.new
-  end
+    def new
+      @planet = Planet.new
+    end
 
   def create
     @planet = current_user.planets.new(planet_params)

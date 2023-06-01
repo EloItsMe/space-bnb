@@ -3,7 +3,8 @@
   top: 0;
   height: 70px;
   width: 100vw;
-  background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
+  backdrop-filter: blur(5px);
   z-index: 2;
 
   .nav{
@@ -94,5 +95,5 @@
   }
 }
 .navbar-menu > *{
-  margin-block: 5px;
+  margin-block: 10px;
 }
