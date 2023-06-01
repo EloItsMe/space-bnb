@@ -1,18 +1,29 @@
 
-<div class="create-planet">
-  <h2>Create a new planet</h2>
-  <%= simple_form_for @planet, html: { multipart: true } do |f| %>
-    <%= f.input :name, label: false, placeholder: "Name" %>
-    <%= f.input :galaxy, label: false, placeholder: "Galaxy" %>
-    <%= f.input :size, label: false, placeholder: "Size" %>
-    <%= f.input :price_per_day, label: false, placeholder: "Price per day" %>
-    <%= f.input :kind, label: false, placeholder: "Kind" %>
-    <%= f.input :content, label: false, placeholder: "Content", hint: "140 characters max" %>
-    <%= f.input :photo, label: false, placeholder: "Photo" %>
+  <div class="create-planet">
+    <h2>New planet</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Create a new planet", class: "btn-main" %>
+    <%= simple_form_for [:owner, @planet], html: { multipart: true } do |f| %>
+      <div class="form-inputs">
+
+        <div class="name-inputs">
+          <%= f.input :name, label: false, placeholder: "Name", class: "form-control" %>
+          <%= f.input :galaxy, label: false, placeholder: "Galaxy", class: "form-control" %>
+        </div>
+
+        <%= f.input :size, label: false, placeholder: "Size", class: "form-control" %>
+        <%= f.input :price_per_day, label: false, placeholder: "Price per day", class: "form-control" %>
+        <%= f.input :kind, label: false, placeholder: "Kind", class: "form-control", :as => :select, :collection => %w[planet comet meteorite star] %>
+        <%= f.input :content,
+                    label: false,
+                    placeholder: "Content",
+                    hint: "140 characters max",
+                    class: "form-control" %>
+        <%= f.input :photo, label: false, placeholder: "Photo", class: "form-control" %>
+      </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Create a new planet", class: "btn-main" %>
+    </div>
+    <% end %>
+    <%= link_to "Cancel ", owner_planets_path, class: "btn-decline" %>
   </div>
-  <% end %>
-  <%= link_to "Cancel ", owner_planets_path, class: "btn-decline" %>
-</div>
