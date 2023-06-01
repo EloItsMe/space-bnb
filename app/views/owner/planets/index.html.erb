@@ -1,5 +1,5 @@
-<h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
-
-<%= link_to "Create a new planet", new_owner_planet_path, class: "btn-main" %>
+<div class="container-btn">
+  <%= link_to "Add your planet", new_owner_planet_path, class: "btn-main" %>
+</div>
 
 <%= render "shared/planets-cards" %>
