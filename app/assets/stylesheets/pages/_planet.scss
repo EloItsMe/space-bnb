@@ -1,5 +1,5 @@
 .planet-container{
-  max-width: 900px;
+  max-width: 1024px;
   margin: auto;
   display: flex;
 
@@ -7,7 +7,7 @@
   border-radius:10px;
 
   padding: 15px;
-  margin-top: 50px;
+  margin-block: 50px;
 
   animation: breath-background 10s infinite;
 
@@ -47,6 +47,15 @@
         strong{
           color: $main-text;
           font-size: 17px;
+        }
+      }
+
+      .planet-size{
+        display: flex;
+        align-items: center;
+        img{
+          height: 20px;
+          width: 20px;
         }
       }
     }
@@ -117,9 +126,12 @@
       .info-container{
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 5px;
 
         h3{
-          font-size: 20px;
+          font-size: 24px;
+          color: $secondary-text;
         }
       }
       .info-container > *{
@@ -140,13 +152,31 @@
       justify-content: center;
 
       .btn-main{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
         margin-top: 20px;
         padding-block: 10px;
+
+        input{
+          color: $main-text;
+          font-weight: 700;
+        }
+
+        span{
+          font-size: 18px;
+        }
+
+        .price-value{
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
       }
     }
   }
 }
-
 
 @keyframes aparition{
   100%{
