@@ -6,5 +6,5 @@ class Planet < ApplicationRecord
 
   validates :name, :content, :size, :galaxy, :kind, :price_per_day, :photo, presence: true
   validates :name, uniqueness: true
-  validates :kind, inclusion: { in: %w(planet comet meteorite star) }
+  validates :kind, inclusion: { in: %w[planet comet meteorite star] }
 end

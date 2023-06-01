@@ -1,5 +1,5 @@
 class PlanetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @planets = Planet.all
@@ -9,5 +9,4 @@ class PlanetsController < ApplicationController
     @planet = Planet.find(params[:id])
     @reservation = Reservation.new
   end
-
 end

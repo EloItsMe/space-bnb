@@ -17,8 +17,10 @@ class ReservationsController < ApplicationController
         status: "pending"
       }
     )
+  end
 
-    raise
+  def index
+    @reservation = Reservation.all
   end
 
   private
