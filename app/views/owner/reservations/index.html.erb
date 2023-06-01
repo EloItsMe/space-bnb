@@ -1,2 +1,15 @@
-<h1>Owner::Reservations#index</h1>
-<p>Find me in app/views/owner/reservations/index.html.erb</p>
+<div class="container-planet">
+  <% @planets.each do |planet|%>
+    <% planet.reservations.each do |reservation| %>
+      <%= cl_image_tag planet.photo.key, class: "reservation-image-list"%>
+      <div class= "reservation-content" >
+      <p><%= reservation.status %>
+      <p><%= planet.size %></p>
+      <p> <%= planet.price_per_day %>₿</p>
+      <h1><%= planet.name.capitalize %></h1>
+      <h2><%= planet.galaxy.capitalize %></h2>
+        <h3> <%= planet.kind %> </h3>
+      </div>
+    <% end %>
+   <% end %>
+</div>

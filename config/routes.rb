@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :reservations, only: %i[index]
 
   namespace :owner do
+    get 'reservations/index'
     resources :planets, only: %i[index new create]
     resources :reservations, only: [:index] do
       member do
