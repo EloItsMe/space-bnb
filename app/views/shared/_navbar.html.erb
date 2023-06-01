@@ -5,10 +5,14 @@
       SpaceBnB
     <% end %>
 
-    <form action="" class="search-bar">
-        <button type="submit" class="search-btn"><%= image_tag("https://res.cloudinary.com/dr4d7enko/image/upload/v1685455086/space-bnb/icons-picutre/search_opt3qg.svg") %></button>
-        <input type="text" placeholder="Search your universe..." name="search" class="search-input">
-    </form>
+    <%= form_with url: planets_path, method: :get, class: "search-bar" do %>
+      <button type="submit" class="search-btn"><%= image_tag("https://res.cloudinary.com/dr4d7enko/image/upload/v1685455086/space-bnb/icons-picutre/search_opt3qg.svg") %></button>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "search-input",
+            placeholder: "Search your universe..."
+        %>
+    <% end %>
 
     <% if user_signed_in? %>
       <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
