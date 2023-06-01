@@ -30,6 +30,12 @@ class ReservationsController < ApplicationController
       render "planets/show", status: :unprocessable_entity
     end
   end
+    
+
+  def index
+    @reservation = Reservation.all
+  end
+   
 
   private
 
