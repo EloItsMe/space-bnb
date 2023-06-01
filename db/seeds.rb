@@ -642,67 +642,128 @@ blofeldbit.save!
 puts 'Creating reservations...'
 
 Reservation.create!(
-  renter: drink_jagger,
-  planet: orbeatles,
+  renter: leonardo_dicarpaccio,
+  planet: orbeatles, # Planète de drink_jagger
   start_date: '2023-06-14',
   end_date: '2023-06-24',
   total_price: 2178,
-  status: 'confirmed'
+  status: 'pending'
 )
+
 Reservation.create!(
-  renter: chef_bezos,
-  planet: gravitelegere,
+  renter: scoop_dogg,
+  planet: gravitelegere, # Planète de chef_bezos
   start_date: '2023-12-05',
   end_date: '2024-06-30',
   total_price: 18_900,
-  status: 'cancelled'
+  status: 'pending'
 )
+
 Reservation.create!(
-  renter: scoop_dogg,
-  planet: marsmallow,
+  renter: chef_bezos,
+  planet: cosmopolitain, # Planète de muncha_kunis
+  start_date: '2023-09-14',
+  end_date: '2025-05-14',
+  total_price: 157,
+  status: 'pending'
+)
+
+Reservation.create!(
+  renter: john_mcdonald,
+  planet: marsmallow, # Planète de scoop_dogg
   start_date: '2023-09-14',
   end_date: '2023-06-24',
   total_price: 120,
   status: 'pending'
 )
+
 Reservation.create!(
   renter: chef_bezos,
-  planet: cosmopolitain,
-  start_date: '2023-09-14',
-  end_date: '2025-05-14',
-  total_price: 157,
-  status: 'confirmed'
-)
-Reservation.create!(
-  renter: leonardo_dicarpaccio,
-  planet: meteoreo,
+  planet: meteoreo, # Planète de leonardo_dicarpaccio
   start_date: '2023-09-14',
   end_date: '2023-06-24',
   total_price: 2170,
   status: 'pending'
 )
+
 Reservation.create!(
-  renter: jeff_golum,
-  planet: galaxsea,
+  renter: pouris_hilton,
+  planet: galaxsea, # Planète de jeff_golum
   start_date: '2023-09-01',
   end_date: '2023-09-26',
   total_price: 144,
-  status: 'confirmed'
+  status: 'pending'
 )
+
 Reservation.create!(
-  renter: pouris_hilton,
-  planet: asterohidalgo,
-  start_date: '2025-07-14',
-  end_date: '2025-08-23',
-  total_price: 2409,
-  status: 'cancelled'
+  renter: jeff_golum,
+  planet: satourkey, # Planète de john_mcdonald
+  start_date: '2023-09-01',
+  end_date: '2023-09-26',
+  total_price: 144,
+  status: 'pending'
 )
+
 Reservation.create!(
   renter: elon_trust,
-  planet: madonnerre,
+  planet: madonnerre, # Planète de pouris_hilton
   start_date: '2025-08-14',
   end_date: '2025-09-23',
   total_price: 2.456,
+  status: 'pending'
+)
+
+Reservation.create!(
+  renter: elon_trust,
+  planet: banebula, # Planète de pouris_hilton
+  start_date: '2025-08-14',
+  end_date: '2025-09-23',
+  total_price: 2.456,
+  status: 'pending'
+)
+
+Reservation.create!(
+  renter: elon_trust,
+  planet: saurondor, # Planète de scoop_dogg
+  start_date: '2025-08-14',
+  end_date: '2025-09-23',
+  total_price: 2.456,
+  status: 'pending'
+)
+
+Reservation.create!(
+  renter: elon_trust,
+  planet: zemozero, # Planète de john_mcdonald
+  start_date: '2025-08-14',
+  end_date: '2025-09-23',
+  total_price: 2.456,
+  status: 'pending'
+)
+
+Reservation.create!(
+  renter: pouris_hilton,
+  planet: blofeldbit, # Planète de leonardo_dicarpaccio
+  start_date: '2025-08-14',
+  end_date: '2025-09-23',
+  total_price: 2.456,
+  status: 'pending'
+)
+
+Reservation.create!(
+  renter: seyfried_gonzalez,
+  planet: asterohidalgo, # Planète de pouris_hilton
+  start_date: '2025-07-14',
+  end_date: '2025-08-23',
+  total_price: 2409,
+  status: 'pending'
+)
+
+Reservation.create!(
+  renter: pouris_hilton,
+  planet: solarway, # Planète de drink_jagger
+  start_date: '2025-07-14',
+  end_date: '2025-08-23',
+  total_price: 2409,
   status: 'pending'
 )
 
