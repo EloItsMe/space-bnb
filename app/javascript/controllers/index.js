@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DaterangeController from "./daterange_controller"
+application.register("daterange", DaterangeController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
