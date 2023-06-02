@@ -91,9 +91,28 @@
   .separator{
     width: 100%;
     height: 2px;
-    background-color: $main-text;
+    background-color: rgba($color: $main-text, $alpha: .5);
     margin-block: 15px;
   }
+  .menu-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    .notification{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $main;
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+
+    }
+  }
+
 }
 .navbar-menu > *{
   margin-block: 10px;
