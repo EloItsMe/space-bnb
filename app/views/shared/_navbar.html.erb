@@ -27,7 +27,12 @@
           <div class="separator"></div>
           <%= link_to "My Planets", owner_planets_path, class: "menu-link" %>
           <%= link_to "Reservations", reservations_path, class: "menu-link" %>
-          <%= link_to "Pending Reservations", owner_reservations_path, class: "menu-link" %>
+          <%= link_to owner_reservations_path, class: "menu-link" do %>
+            Pending Reservations
+            <% if Reservation.includes(:planet).where(planets: { owner: current_user},  status: "pending").count != 0 %>
+              <span class="notification"><%= Reservation.includes(:planet).where(planets: { owner: current_user},  status: "pending").count  %></span>
+            <% end %>
+          <% end %>
           <div class="separator"></div>
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-decline" %>
         </div>
