@@ -124,11 +124,30 @@
     white-space: nowrap;
   }
   &.pending {
-    background-color: #8900ff; // Pour le statut "pending"
+    border: 2px solid $orange;
+    box-shadow: rgba($color: $orange, $alpha: .5) 0px 0px 5px 2px;
+    text-shadow: rgba($color: $orange, $alpha: .5) 1px 0px 10px;
+      p {
+        color: $orange;
+      }
   }
 
   &.accepted {
-    background-color: green; // Pour le statut "accept"
+    border: 2px solid green;
+    box-shadow: rgba($color: green, $alpha: .5) 0px 0px 5px 2px;
+    text-shadow: rgba($color: green, $alpha: .5) 1px 0px 10px;
+      p {
+        color: green;
+      }
+  }
+
+  &.declined {
+    border: 2px solid $decline;
+    box-shadow: rgba($color: $decline, $alpha: .5) 0px 0px 5px 2px;
+    text-shadow: rgba($color: $decline, $alpha: .5) 1px 0px 10px;
+      p {
+        color: $decline;
+      }
   }
 }
 

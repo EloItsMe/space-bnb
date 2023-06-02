@@ -2,9 +2,9 @@
   <% @reservations.each do |reservation| %>
     <div class="reservation-list">
       <%= cl_image_tag reservation.planet.photo.key, class: "reservation-image-list"%>
-      <div class="reservation-content">
+      <div class="reservations-content">
         <div class="reservation-card-title">
-          <div class="reservation-status" <%= reservation.status %>>
+          <div class="reservation-status <%= reservation.status %>">
             <p><%= reservation.status.capitalize %></p>
           </div>
           <h1 class="reservation-card-text-title"><%= reservation.planet.name.capitalize %></h1>
@@ -17,9 +17,15 @@
           <h2 class="reservation-card-galaxy"><%= reservation.planet.galaxy.capitalize %></h2>
           <h3 class="reservation-card-kind"><%= reservation.planet.kind %></h3>
         </div>
-        <div class="reservation-planet-size">
-          <p class="reservation-planets-size-text"><%= reservation.planet.size %> <span>km</span></p>
-          <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685624550/space-bnb/icons-picutre/diameter_naqwxi.svg" %>
+        <div class="reservation-infos">
+          <div class="reservation-planets-price">
+            <p class="reservation-planets-price-text"><%= reservation.planet.price_per_day %></p>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685525826/space-bnb/icons-picutre/btc-per-day_x638y7.svg"%>
+          </div>
+          <div class="reservation-planets-size">
+            <p class="reservation-planets-size-text"><%= reservation.planet.size %> <span>km</span></p>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685624550/space-bnb/icons-picutre/diameter_naqwxi.svg"  %>
+          </div>
         </div>
       </div>
       <hr>
@@ -28,7 +34,6 @@
         <p class="reservation-renter"><%= reservation.planet.owner.first_name %> <%= reservation.planet.owner.last_name %></p>
         <p class="reservation-dates"><%= reservation.start_date.strftime("%d/%m/%Y") %> <%= reservation.end_date.strftime("%d/%m/%Y") %></p>
       </div>
-      <hr>
     </div>
   <% end %>
 </div>
