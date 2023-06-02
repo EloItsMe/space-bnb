@@ -1,5 +1,6 @@
-<div class="container-planet">
-  <% @planets.each do |planet|%>
+<% if @planets.any? %>
+  <div class="container-planet">
+    <% @planets.each do |planet|%>
     <%= link_to planet_path(planet.id),  class: "planet-list" do %>
       <%= cl_image_tag planet.photo.key, class: "planet-image-list"%>
       <div class= "planets-content" >
@@ -28,4 +29,8 @@
       </div>
     <% end %>
   <% end %>
-</div>
+  </div>
+
+<% else %>
+  <h3 class="error-text-search">Sorry have no result for<span> <%= params[:query] %></span> </h3>
+<% end %>
