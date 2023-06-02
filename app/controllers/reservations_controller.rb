@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservation = Reservation.all
+    @reservations = Reservation.where(renter: current_user)
   end
 
   private

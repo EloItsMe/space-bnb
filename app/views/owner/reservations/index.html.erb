@@ -1,15 +1,17 @@
 <div class="container-planet">
-  <% @reservations.each do |reservation|%>
-    <% reservation.renter.reservations.each do |reservation| %>
-      <%= cl_image_tag reservation.planet.photo.key, class: "reservation-image-list"%>
+  <% @planets.each do |planet|%>
+    <% planet.reservations.each do |reservation| %>
+      <%= cl_image_tag planet.photo.key, class: "reservation-image-list"%>
       <div class= "reservation-content" >
       <p><%= reservation.status %>
-      <p><%= reservation.planet.size %></p>
-      <p> <%= reservation.planet.price_per_day %>₿</p>
-      <h1><%= reservation.planet.name.capitalize %></h1>
-      <h2><%= reservation.planet.galaxy.capitalize %></h2>
-        <h3> <%= reservation.planet.kind %> </h3>
+      <p><%= planet.size %></p>
+      <p> <%= planet.price_per_day %>₿</p>
+      <h1><%= planet.name.capitalize %></h1>
+      <h2><%= planet.galaxy.capitalize %></h2>
+        <h3> <%= planet.kind %> </h3>
       </div>
     <% end %>
    <% end %>
 </div>
+
+
