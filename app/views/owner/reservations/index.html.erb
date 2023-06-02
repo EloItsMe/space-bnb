@@ -1,11 +1,11 @@
 
 <div class="reservation-container">
   <% @reservations.each do |reservation|%>
-    <%= link_to planet_path(reservation.planet.id),  class: "reservation-list" do %>
+    <div class="reservation-list">
       <%= cl_image_tag reservation.planet.photo.key, class: "reservation-image-list"%>
       <div class= "reservations-content" >
         <div class="reservation-card-title">
-          <div class="reservation-status">
+          <div class="reservation-status <%= reservation.status %>">
             <p><%= reservation.status.capitalize %></p>
           </div>
           <h1 class="reservation-card-text-title"><%= reservation.planet.name.capitalize %></h1>
@@ -35,7 +35,18 @@
           <p class="reservation-renter"><%= reservation.renter.first_name %> <%= reservation.renter.last_name %></p>
           <p class="reservation-dates"><%= reservation.start_date.strftime("%d/%m/%Y") %> <%= reservation.end_date.strftime("%d/%m/%Y") %></p>
         </div>
+        <hr> <!-- This is the line that separates the planet from the renter -->
+          <% if reservation.status == "pending" %>
+            <div class="button-container">
+              <%= button_to "Accept", accept_owner_reservation_path(reservation), method: :patch, class: "reservation-button-accept" %>
+              <%= button_to "Decline", decline_owner_reservation_path(reservation), method: :patch, class: "reservation-button-decline" %>
+            </div>
+            <% elsif reservation.status == "accepted" %>
+            <div class="button-container">
+              <%= button_to "Cancel", cancel_owner_reservation_path(reservation), method: :patch, class: "reservation-button-cancel" %>
+            </div>
+          <% end %>
       </div>
-    <% end %>
+    </div>
   <% end %>
 </div>
