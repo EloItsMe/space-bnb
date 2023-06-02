@@ -13,14 +13,13 @@
             <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685558411/space-bnb/icons-picutre/star_1_qtposl.svg" %>
           </div>
         </div>
-
         <div class="reservation-planets-type">
           <h2 class="reservation-card-galaxy"><%= reservation.planet.galaxy.capitalize %></h2>
           <h3 class="reservation-card-kind"><%= reservation.planet.kind %></h3>
         </div>
         <div class="reservation-infos">
-          <div class="reservation-planets-price">
-            <p class="reservation-planets-price-text"><%= reservation.planet.price_per_day %></p>
+          <div class="reservation-planets-price-day">
+            <p class="reservation-planets-price-day-text"><%= reservation.planet.price_per_day %></p>
             <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685525826/space-bnb/icons-picutre/btc-per-day_x638y7.svg"%>
           </div>
           <div class="reservation-planets-size">
@@ -28,29 +27,43 @@
             <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685624550/space-bnb/icons-picutre/diameter_naqwxi.svg"  %>
           </div>
         </div>
-        <hr> <!-- This is the line that separates the planet from the renter -->
+      <hr> <!-- This is the line that separates the planet from the renter -->
         <div class="reservation-infos-renter">
+          <div class="reservation-renter-profil">
+            <% if reservation.renter.photo.attached? %>
+              <%= cl_image_tag reservation.renter.photo.key, class: "reservation-renter-avatar" %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685479554/space-bnb/user-profile-picture/Windows-10-user-icon-big_atm8bb.png", class: "reservation-renter-avatar" %>
+            <% end %>
+            <div class="reservation-renter-names">
+              <p class="reservation-renter"><%= reservation.renter.first_name %></p>
+              <p class="reservation-renter"><%= reservation.renter.last_name %></p>
+            </div>
+          </div>
 
-          <% if reservation.renter.photo.attached? %>
-            <%= cl_image_tag reservation.renter.photo.key, class: "reservation-renter-avatar" %>
-          <% else %>
-            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685479554/space-bnb/user-profile-picture/Windows-10-user-icon-big_atm8bb.png", class: "reservation-renter-avatar" %>
-          <% end %>
-          <p class="reservation-renter"><%= reservation.renter.first_name %> <%= reservation.renter.last_name %></p>
-          <p class="reservation-dates"><%= reservation.start_date.strftime("%d/%m/%Y") %> <%= reservation.end_date.strftime("%d/%m/%Y") %></p>
+          <div class="reservation-dates">
+            <p><%= reservation.start_date.strftime("%d/%m/%Y") %></p>
+            <p><%= reservation.end_date.strftime("%d/%m/%Y") %></p>
+          </div>
         </div>
-        <hr> <!-- This is the line that separates the planet from the renter -->
+
+        <div class="reservation-planets-price">
+          <p class="reservation-planets-price-text"><%= reservation.total_price %></p>
+          <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685628907/space-bnb/icons-picutre/bitcoin_s8x5wu.svg" %>
+        </div>
+        
+          <hr> <!-- This is the line that separates the planet from the renter -->
           <% if reservation.status == "pending" %>
             <div class="button-container">
               <%= button_to "Accept", accept_owner_reservation_path(reservation), method: :patch, class: "reservation-button-accept" %>
               <%= button_to "Decline", decline_owner_reservation_path(reservation), method: :patch, class: "reservation-button-decline" %>
             </div>
-            <% elsif reservation.status == "accepted" %>
+          <% elsif reservation.status == "accepted" %>
             <div class="button-container">
               <%= button_to "Cancel", cancel_owner_reservation_path(reservation), method: :patch, class: "reservation-button-cancel" %>
             </div>
           <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>

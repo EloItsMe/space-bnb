@@ -71,12 +71,12 @@
       justify-content: space-between;
       align-items: center;
 
-      .reservation-planets-price {
+      .reservation-planets-price-day {
         display: flex;
         align-items: center;
         gap: 5px;
 
-        .reservation-planets-price-text {
+        .reservation-planets-price-day-text {
           margin: 0;
           color: $secondary-text;
         }
@@ -152,11 +152,11 @@
 }
 
 .reservation-infos-renter {
-  display: grid;
-  grid-template-columns: 50px auto auto;
-  grid-column-gap: 10px;
-  align-items: stretch;
-  justify-items: start;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 
   .reservation-renter-avatar {
     grid-column: 1;
@@ -164,15 +164,31 @@
     width: 50px;
     border-radius: 50%;
   }
-  .reservation-renter {
-    grid-column: 2;
-    color: $secondary-text;
-  }
+
   .reservation-dates {
-    grid-column: 3;
-    color: $secondary-text;
-    text-align: right;
-    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      p {
+        margin: 0;
+        color: $secondary-text;
+      }
+  }
+
+  .reservation-renter-profil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .reservation-renter-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      p {
+        margin: 0;
+      }
   }
 }
 
@@ -240,4 +256,20 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+.reservation-planets-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin: 10px;
+  gap: 5px;
+  margin-top: 10px;
+
+  .reservation-planets-price-text {
+    margin: 0;
+    color: $main-text;
+    font-weight: 700;
+  }
+
 }
