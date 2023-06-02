@@ -1,4 +1,4 @@
-.reservation-container{
+.reservation-container {
   padding-block: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -7,95 +7,95 @@
   max-width: 1280px;
   margin: auto;
 
-  .reservation-list{
+  .reservation-list {
     position: relative;
     background-color: $secondary-background;
     border-radius: 10px;
     padding: 10px;
     text-decoration: none;
-    transition: box-shadow .3s, transform .3s;
+    transition: box-shadow 0.3s, transform 0.3s;
 
-    &:hover{
+    &:hover {
       box-shadow: 0px 0px 50px 1px $main;
       transform: scale(1.02);
     }
-    .reservations-content{
+    .reservations-content {
       padding: 10px;
     }
-    .reservations-content > *{
+    .reservations-content > * {
       margin-top: 10px;
     }
 
-    .reservation-card-title{
+    .reservation-card-title {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .reservation-card-text-title{
+      .reservation-card-text-title {
         font-size: 32px;
         font-weight: 700;
         color: $main;
       }
 
-      .reservation-rating-card{
+      .reservation-rating-card {
         display: flex;
         align-items: center;
         gap: 2px;
 
-        p{
+        p {
           margin: 0;
         }
 
-        img{
+        img {
           height: 20px;
           width: 20px;
         }
       }
     }
 
-    .reservation-planets-type{
+    .reservation-planets-type {
       display: flex;
       justify-content: space-between;
 
-      .reservation-card-galaxy{
+      .reservation-card-galaxy {
         font-size: 24px;
       }
-      .reservation-card-kind{
+      .reservation-card-kind {
         font-size: 20px;
         color: $secondary-text;
       }
     }
 
-    .reservation-infos{
+    .reservation-infos {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .reservation-planets-price{
+      .reservation-planets-price {
         display: flex;
         align-items: center;
         gap: 5px;
 
-        .reservation-planets-price-text{
+        .reservation-planets-price-text {
           margin: 0;
           color: $secondary-text;
         }
       }
 
-      .reservation-planets-size{
+      .reservation-planets-size {
         display: flex;
         align-items: center;
         gap: 2px;
 
-        .reservation-planets-size-text{
+        .reservation-planets-size-text {
           margin: 0;
           color: $secondary-text;
-            span {
-              color: $secondary-text;
-            }
+          span {
+            color: $secondary-text;
+          }
         }
 
-        img{
+        img {
           height: 20px;
           width: 20px;
         }
@@ -109,20 +109,27 @@
   top: 10px;
   right: -20px;
   transform: rotate(45deg);
-  background-color: #8900FF; /* Utilisation de votre couleur principale pour le fond */
+  // background-color: #8900ff;
   padding: 5px 10px;
-  font-weight: bold;
   border-radius: 5px;
-  white-space: nowrap;
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.2); /* Ajout d'une ombre pour plus de profondeur */
-  border: 2px solid #ffffff; /* Ajout d'une bordure pour le contraste */
-    p {
-      margin: 0;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: $main-text;
-    }
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffffff;
+  p {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $main-text;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  &.pending {
+    background-color: #8900ff; // Pour le statut "pending"
+  }
+
+  &.accepted {
+    background-color: green; // Pour le statut "accept"
+  }
 }
 
 .reservation-infos-renter {
@@ -148,4 +155,70 @@
     text-align: right;
     justify-self: end;
   }
+}
+
+.reservation-button-accept {
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 5px;
+  border: solid 2px green;
+  color: green;
+  background: none;
+  font-family: $font;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: box-shadow .3s, text-shadow .3s;
+
+  &:hover{
+    color: green;
+    box-shadow: rgba($color: green, $alpha: .5) 0px 0px 5px 2px;
+    text-shadow: rgba($color: green, $alpha: .5) 1px 0px 10px;
+  }
+}
+
+.reservation-button-decline {
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 5px;
+  border: solid 2px $decline;
+  color: $decline;
+  background: none;
+  font-family: $font;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: box-shadow .3s, text-shadow .3s;
+
+  &:hover{
+    color: $decline;
+    box-shadow: rgba($color: $decline, $alpha: .5) 0px 0px 5px 2px;
+    text-shadow: rgba($color: $decline, $alpha: .5) 1px 0px 10px;
+  }
+}
+
+.reservation-button-cancel {
+  padding-inline: 10px;
+  padding-block: 5px;
+  border-radius: 5px;
+  border: solid 2px $secondary-text;
+  color: $secondary-text;
+  background: none;
+  font-family: $font;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: box-shadow .3s, text-shadow .3s;
+
+  &:hover{
+    color: $secondary-text;
+    box-shadow: rgba($color: $secondary-text, $alpha: .5) 0px 0px 5px 2px;
+    text-shadow: rgba($color: $secondary-text, $alpha: .5) 1px 0px 10px;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
