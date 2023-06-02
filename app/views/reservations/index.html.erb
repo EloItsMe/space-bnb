@@ -24,7 +24,11 @@
       </div>
       <hr>
       <div class="reservation-infos-renter">
+      <% if reservation.planet.owner.photo.attached? %>
         <%= cl_image_tag reservation.planet.owner.photo.key, class: "reservation-renter-avatar" %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685479554/space-bnb/user-profile-picture/Windows-10-user-icon-big_atm8bb.png", class: "reservation-renter-avatar" %>
+      <% end %>
         <p class="reservation-renter"><%= reservation.planet.owner.first_name %> <%= reservation.planet.owner.last_name %></p>
         <p class="reservation-dates"><%= reservation.start_date.strftime("%d/%m/%Y") %> <%= reservation.end_date.strftime("%d/%m/%Y") %></p>
       </div>
