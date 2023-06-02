@@ -33,6 +33,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.where(renter: current_user)
+    # @reservations = Reservation.includes(:planet).where(planets: { owner: current_user }, status: "pending")
   end
 
   private
