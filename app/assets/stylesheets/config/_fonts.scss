@@ -33,3 +33,18 @@ li{
       color: $main-text;
     }
 }
+
+.error-text-search{
+  display: flex;
+  max-width: 1280px;
+  padding-top: 50px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  span{
+    color: $main;
+    text-transform: uppercase;
+  }
+}

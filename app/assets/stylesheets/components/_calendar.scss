@@ -114,7 +114,7 @@ wc-datepicker {
 }
 
 .wc-datepicker__date:hover > * {
-  background-color: rgba($color: $background, $alpha: .5);
+  background-color: rgba($color: $main, $alpha: .3);
 }
 
 .wc-datepicker__date > * {
@@ -130,7 +130,7 @@ wc-datepicker {
 }
 
 .wc-datepicker__date--in-range > * {
-  background-color: rgba($color: $background, $alpha: .5);
+  background-color: rgba($color: $main, $alpha: .3);
 }
 
 .wc-datepicker__date--selected > *,

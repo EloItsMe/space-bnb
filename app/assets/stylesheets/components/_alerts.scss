@@ -1,0 +1,12 @@
+.success{
+  background-color: none;
+  border-radius: 5px;
+  border: 3px solid $main;
+  box-shadow: 0 0 20px 2px $main;
+}
+.failure{
+  background-color: none;
+  border-radius: 5px;
+  border: 3px solid $decline;
+  box-shadow: 0 0 20px 2px $decline;
+}

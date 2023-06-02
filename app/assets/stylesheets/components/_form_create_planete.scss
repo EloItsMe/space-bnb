@@ -36,7 +36,6 @@
         outline: none;
         box-shadow: none;
       }
-
     }
 
     .name-inputs {
@@ -52,5 +51,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+}
+
+.form-control[type="file"]:not(:disabled):not([readonly]) {
+  color: #6C757D;
+}
+.planet_photo{
+  button{
+    display: none;
   }
 }
