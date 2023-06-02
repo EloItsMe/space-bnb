@@ -18,8 +18,8 @@
           <h3 class="reservation-card-kind"><%= reservation.planet.kind %></h3>
         </div>
         <div class="reservation-infos">
-          <div class="reservation-planets-price">
-            <p class="reservation-planets-price-text"><%= reservation.planet.price_per_day %></p>
+          <div class="reservation-planets-price-day">
+            <p class="reservation-planets-price-day-text"><%= reservation.planet.price_per_day %></p>
             <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685525826/space-bnb/icons-picutre/btc-per-day_x638y7.svg"%>
           </div>
           <div class="reservation-planets-size">
@@ -30,14 +30,28 @@
       </div>
       <hr>
       <div class="reservation-infos-renter">
-      <% if reservation.planet.owner.photo.attached? %>
-        <%= cl_image_tag reservation.planet.owner.photo.key, class: "reservation-renter-avatar" %>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685479554/space-bnb/user-profile-picture/Windows-10-user-icon-big_atm8bb.png", class: "reservation-renter-avatar" %>
-      <% end %>
-        <p class="reservation-renter"><%= reservation.planet.owner.first_name %> <%= reservation.planet.owner.last_name %></p>
-        <p class="reservation-dates"><%= reservation.start_date.strftime("%d/%m/%Y") %> <%= reservation.end_date.strftime("%d/%m/%Y") %></p>
+        <div class="reservation-renter-profil">
+          <% if reservation.planet.owner.photo.attached? %>
+            <%= cl_image_tag reservation.planet.owner.photo.key, class: "reservation-renter-avatar" %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685479554/space-bnb/user-profile-picture/Windows-10-user-icon-big_atm8bb.png", class: "reservation-renter-avatar" %>
+          <% end %>
+          <div class="reservation-renter-names">
+            <p class="reservation-renter"><%= reservation.planet.owner.first_name %></p>
+            <p class="reservation-renter"><%= reservation.planet.owner.last_name %></p>
+          </div>
+        </div>
+
+        <div class="reservation-dates">
+          <p><%= reservation.start_date.strftime("%d/%m/%Y") %></p>
+          <p><%= reservation.end_date.strftime("%d/%m/%Y") %></p>
+        </div>
       </div>
+
+        <div class="reservation-planets-price">
+          <p class="reservation-planets-price-text"><%= reservation.total_price %></p>
+          <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685628907/space-bnb/icons-picutre/bitcoin_s8x5wu.svg" %>
+        </div>
     </div>
   <% end %>
 </div>
