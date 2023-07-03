@@ -41,17 +41,15 @@
             <p class="reservation-renter"><%= reservation.planet.owner.last_name %></p>
           </div>
         </div>
-
         <div class="reservation-dates">
           <p><%= reservation.start_date.strftime("%d/%m/%Y") %></p>
           <p><%= reservation.end_date.strftime("%d/%m/%Y") %></p>
         </div>
       </div>
-
-        <div class="reservation-planets-price">
-          <p class="reservation-planets-price-text"><%= reservation.total_price %></p>
-          <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685628907/space-bnb/icons-picutre/bitcoin_s8x5wu.svg" %>
-        </div>
+      <div class="reservation-planets-price">
+        <p class="reservation-planets-price-text"><%= reservation.total_price %></p>
+        <%= image_tag "https://res.cloudinary.com/dr4d7enko/image/upload/v1685628907/space-bnb/icons-picutre/bitcoin_s8x5wu.svg" %>
+      </div>
     </div>
   <% end %>
 </div>

@@ -1,5 +1,6 @@
 class Reservation < ApplicationRecord
   attr_accessor :daterange
+  # Ça veut dire 
 
   belongs_to :planet
   belongs_to :renter, class_name: "User"
