@@ -11,7 +11,7 @@ module Owner
     def create
       @planet = current_user.planets.new(planet_params)
       if @planet.save
-        redirect_to owner_planets_path
+        redirect_to owner_planets_path, notice: "Your planet is successfully created"
       else
         render :new, status: :unprocessable_entity
       end

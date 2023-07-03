@@ -25,7 +25,7 @@ class ReservationsController < ApplicationController
       }
     )
     if @reservation.save
-      redirect_to reservations_path
+      redirect_to reservations_path, notice: "Your reservation got booked successfully"
     else
       render "planets/show", status: :unprocessable_entity
     end

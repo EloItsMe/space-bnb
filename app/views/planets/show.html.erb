@@ -77,8 +77,8 @@
 </div>
 
 <% if !@reservation.nil? && @reservation.errors.any? %>
-  <div class="alert alert-danger alert-dismissible fade show m-1" role="alert">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    Enter a valid date please.
+  <div class="alert alert-dismissible fade show m-1 failure" role="alert">
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+    Enter a valid date.
   </div>
 <% end %>
